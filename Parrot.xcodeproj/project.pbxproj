@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		B6D50C131F6A0B8E0085C812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D50C121F6A0B8E0085C812 /* AppDelegate.swift */; };
-		B6D50C151F6A0B8E0085C812 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D50C141F6A0B8E0085C812 /* ViewController.swift */; };
+		B6D50C151F6A0B8E0085C812 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D50C141F6A0B8E0085C812 /* SetupViewController.swift */; };
 		B6D50C171F6A0B8E0085C812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D50C161F6A0B8E0085C812 /* Assets.xcassets */; };
 		B6D50C1A1F6A0B8E0085C812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D50C181F6A0B8E0085C812 /* Main.storyboard */; };
 		B6D50C261F6A0B8F0085C812 /* ParrotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D50C251F6A0B8F0085C812 /* ParrotTests.swift */; };
 		B6D50C311F6A0B8F0085C812 /* ParrotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D50C301F6A0B8F0085C812 /* ParrotUITests.swift */; };
+		B6D50C3F1F6A0DF10085C812 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D50C3E1F6A0DF10085C812 /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,7 @@
 /* Begin PBXFileReference section */
 		B6D50C0F1F6A0B8E0085C812 /* Parrot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parrot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D50C121F6A0B8E0085C812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B6D50C141F6A0B8E0085C812 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B6D50C141F6A0B8E0085C812 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		B6D50C161F6A0B8E0085C812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6D50C191F6A0B8E0085C812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B6D50C1B1F6A0B8E0085C812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 		B6D50C2C1F6A0B8F0085C812 /* ParrotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParrotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D50C301F6A0B8F0085C812 /* ParrotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParrotUITests.swift; sourceTree = "<group>"; };
 		B6D50C321F6A0B8F0085C812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6D50C3E1F6A0DF10085C812 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				B6D50C121F6A0B8E0085C812 /* AppDelegate.swift */,
-				B6D50C141F6A0B8E0085C812 /* ViewController.swift */,
+				B6D50C141F6A0B8E0085C812 /* SetupViewController.swift */,
+				B6D50C3E1F6A0DF10085C812 /* EditViewController.swift */,
 				B6D50C161F6A0B8E0085C812 /* Assets.xcassets */,
 				B6D50C181F6A0B8E0085C812 /* Main.storyboard */,
 				B6D50C1B1F6A0B8E0085C812 /* Info.plist */,
@@ -193,6 +196,11 @@
 					B6D50C0E1F6A0B8E0085C812 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 					B6D50C201F6A0B8F0085C812 = {
 						CreatedOnToolsVersion = 9.0;
@@ -257,8 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6D50C151F6A0B8E0085C812 /* ViewController.swift in Sources */,
+				B6D50C151F6A0B8E0085C812 /* SetupViewController.swift in Sources */,
 				B6D50C131F6A0B8E0085C812 /* AppDelegate.swift in Sources */,
+				B6D50C3F1F6A0DF10085C812 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +424,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Parrot/Parrot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Parrot/Info.plist;
@@ -430,7 +438,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Parrot/Parrot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Parrot/Info.plist;
