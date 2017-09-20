@@ -8,13 +8,18 @@
 
 import Cocoa
 
+fileprivate let reusedKey =  NSUserInterfaceItemIdentifier(rawValue: "Item")
+
+
 class EditViewController: NSViewController {
 
-    @IBOutlet weak var collectionView: NSScrollView!
+    @IBOutlet weak var collectionView: NSCollectionView!
     public var path : URL = URL.init(string: "/")!
     var fileDic : Dictionary<String, URL> = [:]
     var stringDic : Dictionary<String, [URL]> = [:] // <语言:[路径]>
+    var stringArray : Array<String> = [] // [语言]
     var translateDic : Dictionary<String, [[String : (String, URL)]]> = [:]  // <key:<语言:(value, 文件路径)>>
+    var translateArray : Array<String> = [] // [key]
     
     let fileManager = FileManager.default
     
@@ -22,6 +27,7 @@ class EditViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        setCollectionView()
     }
     
     override func viewWillAppear() {
@@ -29,12 +35,15 @@ class EditViewController: NSViewController {
         self.searchFile()
         
         for key in stringDic.keys {
+            self.stringArray.append(key)
             let urls = stringDic[key]
             for url in urls! {
                 self.resolveStrings(language: key, fileURL: url)
             }
         }
+        translateArray.sort()
         
+        collectionView.reloadData()
     }
     
     
@@ -111,6 +120,10 @@ class EditViewController: NSViewController {
                     } else {
                         translateDic[stringone] = [[language : (stringtwo, fileURL)]]
                     }
+                    
+                    if !translateArray.contains(stringone) {
+                        translateArray.append(stringone)
+                    }
                 }
             }
             
@@ -120,8 +133,86 @@ class EditViewController: NSViewController {
         }
         
     }
+}
+
+
+extension EditViewController{
+    fileprivate func setCollectionView (){
+        collectionView.register(CustomItem.self, forItemWithIdentifier: reusedKey)
+        collectionView.dataSource = self
+        let layout = collectionView.collectionViewLayout as! NSCollectionViewFlowLayout
+        layout.itemSize = NSSize(width: 300, height: 44)
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 10
+    }
+}
+
+extension EditViewController : NSCollectionViewDataSource {
+    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0 {
+            return self.stringArray.count + 1
+        } else {
+            return self.translateDic.keys.count * 4
+        }
+    }
+    
+    func numberOfSections(in collectionView: NSCollectionView) -> Int {
+        return 2
+    }
     
     
-    
+    func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+        let item = collectionView.makeItem(withIdentifier: reusedKey, for: indexPath) as! CustomItem
+        if indexPath.section == 0 {
+            item.inputField.isHidden = true
+            item.titleLabel.isHidden = false
+            
+            if indexPath.item == 0 {
+                item.titleLabel.stringValue = "KEY"
+            } else {
+                item.titleLabel.stringValue = self.stringArray[indexPath.item - 1]
+            }
+            
+        } else {
+            item.inputField.string = ""
+            let lineNumber = indexPath.item / 4
+            let langNumber = indexPath.item % 4
+            
+            let key = self.translateArray[lineNumber]
+            
+            if langNumber == 0 {
+                item.inputField.isHidden = true
+                item.titleLabel.isHidden = false
+                
+                item.titleLabel.stringValue = key
+            } else {
+                item.inputField.isHidden = false
+                item.titleLabel.isHidden = true
+                
+                let lang = self.stringArray[langNumber - 1]
+                
+                for dic in self.translateDic[key]! {
+                    if dic.keys.first == lang {
+                        item.inputField.string = (dic[lang]?.0)!
+                        break;
+                    }
+                }
+            }
+            
+            if item.inputField.string == "" {
+                item.scrollView.layer?.backgroundColor = NSColor.red.cgColor
+            } else {
+                item.scrollView.layer?.backgroundColor = NSColor.white.cgColor
+            }
+        }
+        
+        return item
+    }
     
 }
+
+
+
+
+
+

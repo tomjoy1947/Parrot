@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CustomItem" customModule="Parrot" customModuleProvider="target">
+            <connections>
+                <outlet property="inputField" destination="QUi-O0-zod" id="vJO-Vj-C7Z"/>
+                <outlet property="scrollView" destination="Wpq-Ws-zH9" id="uD9-r3-tKf"/>
+                <outlet property="titleLabel" destination="LBq-fH-T18" id="C57-4p-7KR"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="17"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wpq-Ws-zH9">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="17"/>
+                    <clipView key="contentView" id="Tjx-yl-pgS">
+                        <rect key="frame" x="1" y="1" width="478" height="15"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="QUi-O0-zod">
+                                <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="minSize" width="15" height="15"/>
+                                <size key="maxSize" width="478" height="10000000"/>
+                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            </textView>
+                        </subviews>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="LRr-Mp-znD">
+                        <rect key="frame" x="-100" y="-100" width="478" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="bGZ-QI-yln">
+                        <rect key="frame" x="463" y="1" width="16" height="15"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LBq-fH-T18">
+                    <rect key="frame" x="-2" y="0.0" width="484" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="j7z-ZR-7R1">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="LBq-fH-T18" secondAttribute="trailing" id="3hy-hw-nWF"/>
+                <constraint firstItem="Wpq-Ws-zH9" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="5eI-h0-vtb"/>
+                <constraint firstAttribute="trailing" secondItem="Wpq-Ws-zH9" secondAttribute="trailing" id="61S-dU-duc"/>
+                <constraint firstItem="Wpq-Ws-zH9" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="6mq-FP-eTM"/>
+                <constraint firstAttribute="bottom" secondItem="LBq-fH-T18" secondAttribute="bottom" id="C7v-fA-oqF"/>
+                <constraint firstItem="LBq-fH-T18" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="D73-ih-ZPB"/>
+                <constraint firstAttribute="bottom" secondItem="Wpq-Ws-zH9" secondAttribute="bottom" id="S6c-go-s2A"/>
+                <constraint firstItem="LBq-fH-T18" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="t2v-WR-QnL"/>
+            </constraints>
+            <point key="canvasLocation" x="140" y="241.5"/>
+        </customView>
+    </objects>
+</document>

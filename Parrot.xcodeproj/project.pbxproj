@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B65B2F2A1F72049D0061BD14 /* CustomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B2F281F72049D0061BD14 /* CustomItem.swift */; };
+		B65B2F2B1F72049D0061BD14 /* CustomItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65B2F291F72049D0061BD14 /* CustomItem.xib */; };
 		B6D50C131F6A0B8E0085C812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D50C121F6A0B8E0085C812 /* AppDelegate.swift */; };
 		B6D50C151F6A0B8E0085C812 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D50C141F6A0B8E0085C812 /* SetupViewController.swift */; };
 		B6D50C171F6A0B8E0085C812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D50C161F6A0B8E0085C812 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B65B2F281F72049D0061BD14 /* CustomItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomItem.swift; sourceTree = "<group>"; };
+		B65B2F291F72049D0061BD14 /* CustomItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomItem.xib; sourceTree = "<group>"; };
 		B6D50C0F1F6A0B8E0085C812 /* Parrot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parrot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D50C121F6A0B8E0085C812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6D50C141F6A0B8E0085C812 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 				B6D50C181F6A0B8E0085C812 /* Main.storyboard */,
 				B6D50C1B1F6A0B8E0085C812 /* Info.plist */,
 				B6D50C1C1F6A0B8E0085C812 /* Parrot.entitlements */,
+				B65B2F281F72049D0061BD14 /* CustomItem.swift */,
+				B65B2F291F72049D0061BD14 /* CustomItem.xib */,
 			);
 			path = Parrot;
 			sourceTree = "<group>";
@@ -240,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6D50C171F6A0B8E0085C812 /* Assets.xcassets in Resources */,
+				B65B2F2B1F72049D0061BD14 /* CustomItem.xib in Resources */,
 				B6D50C1A1F6A0B8E0085C812 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6D50C151F6A0B8E0085C812 /* SetupViewController.swift in Sources */,
+				B65B2F2A1F72049D0061BD14 /* CustomItem.swift in Sources */,
 				B6D50C131F6A0B8E0085C812 /* AppDelegate.swift in Sources */,
 				B6D50C3F1F6A0DF10085C812 /* EditViewController.swift in Sources */,
 			);

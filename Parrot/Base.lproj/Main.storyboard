@@ -545,7 +545,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="T6b-Aq-9GR" id="mLJ-bi-t69"/>
+                        <outlet property="collectionView" destination="7ET-q9-57K" id="feq-8g-kcC"/>
                     </connections>
                 </viewController>
                 <customObject id="AEs-OJ-Dlp" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
